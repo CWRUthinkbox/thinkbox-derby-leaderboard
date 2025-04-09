@@ -1,0 +1,272 @@
+@font-face {
+  font-family: 'Orbitron';
+  src: url('Orbitron.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('Inter.ttf') format('truetype');
+}
+
+html {
+  font-family: 'Inter';
+}
+
+body {
+  margin-top: 0;
+}
+
+div.separator {
+  width: 100vw;
+  height: .3vw;
+  background-color: black;
+  position: absolute;
+  left: 0
+}
+
+div#header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+img#derby_logo {
+  position: absolute;
+  left: 0;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+}
+
+img#qr {
+  position: absolute;
+  right: 0;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+  top: 1vw;
+}
+
+div#right {
+  font-size: 1.5vw;
+}
+
+div#right h6 {
+  top: -2.4vw;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  text-align: center;
+  width: 5.4vw;
+}
+
+div#timerContainer {
+  text-align: center;
+}
+
+div#timer {
+  border: solid black .5vw;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 3vw;
+  padding: 0.25ch .5ch;
+  text-align: center;
+  font-family: monospace;
+  box-sizing: border-box;
+}
+
+div.lanes-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lanes-container>div {
+  /* Adjust the width of each lane */
+  flex: 1;
+  /* Adjust the margin between lanes */
+  margin: 0 10px;
+}
+
+object.firstPlace,
+object.secondPlace,
+object.thirdPlace {
+  position: absolute;
+  width: 2.5vw;
+}
+
+div.crawlers object.firstPlace,
+div.crawlers object.secondPlace,
+div.crawlers object.thirdPlace {
+  width: 3.5vw;
+}
+
+object.firstPlace {
+  filter: invert(65%) sepia(90%) saturate(300%) hue-rotate(10deg);
+}
+
+object.secondPlace {
+  filter: invert(80%) sepia(5%) saturate(200%) hue-rotate(180deg);
+}
+
+object.thirdPlace {
+  filter: invert(40.6%) sepia(100%) saturate(447.1%) hue-rotate(0deg);
+}
+
+div.Lane {
+  display: flex;
+  flex-direction: column;
+}
+
+div.Lane select {
+  width: 80%;
+  margin: auto;
+
+  /* Removes default styling */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: white;
+  border: .25vw solid #333;
+  border-radius: .5vw;
+  padding: .5vw 1vw .5vw 1vw;
+  /* Add extra padding on the right for the arrow */
+  font-size: 2vw;
+  cursor: pointer;
+
+  /* Custom SVG arrow as text path */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='black' stroke-width='2'%3E%3Cpath d='M5 7 L10 12 L15 7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.5vw center;
+  background-size: 12px;
+  background-size: 2vw;
+}
+
+div.Lane select:disabled {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23B0B0B0' stroke-width='2'%3E%3Cpath d='M5 7 L10 12 L15 7'/%3E%3C/svg%3E");
+  border-color: lightgrey;
+  color: black;
+}
+
+/* Set color to grey when race is started and lane is empty */
+.Lane.grey h3,
+.Lane.grey .finishTime,
+.Lane.grey .speed,
+.Lane.grey select {
+  color: lightgrey !important;
+}
+
+div.Lane select:focus-visible {
+  /* Smaller text when open */
+  font-size: 1vw;
+}
+
+div.Lane div.finishTime,
+div.Lane div.speed,
+div.Lane h3 {
+  text-align: center;
+}
+
+div.Lane object {
+  width: 3vw;
+  max-height: 3vw;
+  padding: .5vw;
+}
+
+div.Lane h3 {
+  font-size: 3vw;
+  margin: 0 0 1vw 0
+}
+
+div.Lane div.finishTime,
+div.Lane div.speed {
+  font-size: 4vw;
+  font-weight: 800;
+}
+
+div#results-bottom {
+  display: flex;
+}
+
+div.vertical-separator {
+  width: .3vw;
+  background-color: black;
+}
+
+div#leaderboard,
+div#prevRaceResults {
+  width: 50vw;
+  height: 55vh;
+  /*TODO*/
+  position: relative;
+  top: .3vw;
+}
+
+div#results-bottom h1 {
+  text-align: center;
+  font-size: 2.5vw;
+}
+
+div#leaderboard button {
+  all: unset;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 1vw;
+  right: 1vw;
+}
+
+div.ranking {
+  display: grid;
+  grid-template-columns: 10% 55% 15% 20%;
+  width: 100%;
+}
+
+div.ranking h4 {
+  font-size: 2.5vw;
+}
+
+div.rank {
+  place-items: center;
+  display: grid;
+}
+
+div.ranking h5,
+div.ranking h4 {
+  margin: 0;
+  font-size: 1.5vw;
+}
+
+div.rankings {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 40vh;
+}
+
+div.crawlers h1,
+div.leaders h1,
+div#prevRaceResults h1 {
+  margin-bottom: 0;
+}
+
+div#controls {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+div#controls button {
+  font-size: 10px;
+  padding: 1px;
+}
+
+/* Ensure that really long car names are truncated with ellipsis to prevent them from spilling over into other elements */
+h2.teamName,
+select {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

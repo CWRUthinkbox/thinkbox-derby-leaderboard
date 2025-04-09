@@ -1,0 +1,24 @@
+{
+  "name": "think[box] Derby Leaderboard",
+  "version": "1.0.0",
+  "description": "A live interactive leaderboard for the think[box] Derby",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.cjs",
+    "dev": "node server.cjs",
+    "build": "next build",
+    "serve": "next start"
+  },
+  "dependencies": {
+    "danfojs": "^1.1.2",
+    "express": "^4.17.1",
+    "googleapis": "^148.0.0",
+    "serialport": "^10.4.0"
+  },
+  "devDependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  }
+}
